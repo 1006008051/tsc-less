@@ -1,0 +1,50 @@
+{
+  "name": "tsc-less",
+  "version": "0.0.1",
+  "description": "Import from [.less] to [.css] after typescript compilation.",
+  "author": "wangyongcun <1006008051@qq.com>",
+  "main": "cjs/src/index.js",
+  "module": "es/src/index.js",
+  "bin": {
+    "tsc-less": "cjs/src/index.js"
+  },
+  "files": [
+    "es",
+    "cjs",
+    "README.md"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1006008051/tsc-less.git"
+  },
+  "homepage": "https://github.com/1006008051/tsc-less#readme",
+  "bugs": {
+    "url": "https://github.com/1006008051/tsc-less/issues"
+  },
+  "keywords": [
+    "typescript",
+    "tsc",
+    "tsc-less-css",
+    "less css",
+    "tsc-less"
+  ],
+  "scripts": {
+    "build": "npm run build:es && npm run build:cjs",
+    "build:es": "rimraf es && tsc -p tsconfig.esm.json",
+    "build:cjs": "rimraf cjs && tsc -p tsconfig.cjs.json"
+  },
+  "dependencies": {
+    "commander": "^9.4.1",
+    "globby": "^13.1.2",
+    "jscodeshift": "^0.14.0",
+    "slash": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.11.5",
+    "@types/less": "^3.0.3",
+    "@types/node": "^18.7.18",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.4"
+  }
+}

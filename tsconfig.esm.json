@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "es",
+        "module": "esnext",
+        "target": "ES6",
+        "sourceMap": false
+    },
+}
