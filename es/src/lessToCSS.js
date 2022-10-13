@@ -7,21 +7,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as less from "less";
+import less from "less";
 const lessToCSS = (str) => __awaiter(void 0, void 0, void 0, function* () {
-    let count = 0;
-    let content = "";
     try {
-        const { css: content } = yield less.render(str, {
+        const { css } = yield less.render(str, {
             compress: true
         });
-        count += 1;
+        return css;
     }
     catch (err) {
     }
-    return {
-        content,
-        count,
-    };
 });
 export { lessToCSS };

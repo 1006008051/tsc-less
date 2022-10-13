@@ -1,12 +1,13 @@
 {
   "name": "tsc-less",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "Import from [.less] to [.css] after typescript compilation.",
   "author": "wangyongcun <1006008051@qq.com>",
-  "main": "cjs/src/index.js",
+  "main": "es/src/index.js",
   "module": "es/src/index.js",
+  "type": "module",
   "bin": {
-    "tsc-less": "cjs/src/index.js"
+    "tsc-less": "es/src/index.js"
   },
   "files": [
     "es",
@@ -32,7 +33,8 @@
   "scripts": {
     "build": "npm run build:es && npm run build:cjs",
     "build:es": "rimraf es && tsc -p tsconfig.esm.json",
-    "build:cjs": "rimraf cjs && tsc -p tsconfig.cjs.json"
+    "build:cjs": "rimraf cjs && tsc -p tsconfig.cjs.json",
+    "test": "tsc-less -i ./packages -o ./dist/es"
   },
   "dependencies": {
     "commander": "^9.4.1",

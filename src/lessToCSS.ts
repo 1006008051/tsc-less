@@ -1,4 +1,4 @@
-import * as less from "less";
+import less from "less";
 
 /**
 * 将code中的less换成css
@@ -6,20 +6,14 @@ import * as less from "less";
 * @returns Quantity replaced
 */
 const lessToCSS = async (str: string): Promise<any> => {
-    let count = 0;
-    let content = "";
     try {
-        const { css: content } = await less.render(str,
+        const { css } = await less.render(str,
             {
                 compress: true // Minify CSS output
             });
-        count += 1;
+        return css
     } catch (err) {
 
-    }
-    return {
-        content,
-        count,
     }
 }
 

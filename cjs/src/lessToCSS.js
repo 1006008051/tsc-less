@@ -10,21 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lessToCSS = void 0;
-const less = require("less");
+const less_1 = require("less");
 const lessToCSS = (str) => __awaiter(void 0, void 0, void 0, function* () {
-    let count = 0;
-    let content = "";
     try {
-        const { css: content } = yield less.render(str, {
+        const { css } = yield less_1.default.render(str, {
             compress: true
         });
-        count += 1;
+        return css;
     }
     catch (err) {
     }
-    return {
-        content,
-        count,
-    };
 });
 exports.lessToCSS = lessToCSS;
